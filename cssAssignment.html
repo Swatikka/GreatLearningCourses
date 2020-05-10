@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height">
+        <title>Trello-like app (Tralala)</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <style>
+            .flex-container {
+              display: flex;
+              flex-wrap: nowrap;
+              overflow-y: auto;
+              white-space: nowrap;
+              height: 530px;
+            }
+            
+            .flex-container > div {
+              background-color: #f1f1f1;
+              width: 200px;
+              margin: 10px;
+              font-size: 15px;
+              border-radius: 10px;
+              padding: 10px;
+            } 
+
+            .alignRight {
+                float: right;
+            }  
+
+            body {
+                background-image: url('bg-rain-drops-on-window-shield.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+
+            .header {
+                color: white;
+                background-color: #4790A8;
+                padding: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 16px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .header1 {
+                color: white;
+                background-color: #355856;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            li {
+                display: inline;
+            }
+
+            .textbox {
+                border-radius: 5px;
+                overflow: hidden;
+                padding: 10px;
+            }
+
+            .textbox:hover, i:hover, a:hover, button:hover, .textboxpencil:hover {
+                background-color: lightgray;
+            }
+
+            a {
+                color: black;
+            }
+
+            button {
+                background-color: #808000;
+                border-radius: 10px;
+                padding: 10px;
+            }
+
+            .textboxpencil {
+                border-radius: 5px;
+                overflow: hidden;
+                padding: 10px;
+            }
+
+            i.top {
+                display: none;
+            }
+
+            .flex-container > div:hover i.top  {
+                display: inline-block;
+            }
+
+            .textInput {
+                border-color: #4790A8;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div>
+                <i class="fas fa-home"></i> &nbsp;
+                <i class="fas fa-th-list">Boards</i> &nbsp;
+                <input style="background-color: #4790A8;" type="text" 
+                class="textInput"
+                id="myInput" onfocus="focusFunction()" onblur="blurFunction()" />
+            </div>
+            <div>
+                Tralala
+            </div>
+            <div>
+                <i class="fas fa-plus"></i> &nbsp;
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+        <div class="header1">
+            <div>
+                Frontend Training
+            </div>
+            <div>
+                <i class="fas fa-ellipsis-v">&nbsp;Show Menu</i>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div style="align-self: flex-start">To Do 
+                <i class="fas fa-ellipsis-h alignRight"></i> 
+                <br /> <br />
+                <input class="textboxpencil" type="text" placeholder="Learn HTML" /> 
+                <i class="fas fa-pencil-alt top"></i>
+                <br /> <br />
+                <input class="textboxpencil" type="text" placeholder="Learn CSS" />
+                <i class="fas fa-pencil-alt top"></i>
+                <br /> <br />
+                <input class="textboxpencil" type="text" placeholder="Learn Javascript" />
+                <i class="fas fa-pencil-alt top"></i>
+                <br /> <br />
+                <a href="">+Add another card</a>
+            </div>
+            <div style="align-self: flex-start">Doing 
+                <i class="fas fa-ellipsis-h alignRight"></i>
+                <br /> <br />
+                <input class="textbox" type="text" placeholder="Prepare resume" />
+                <br /> <br />
+                <input class="textbox" type="text" placeholder="Enter a title for this card..." />
+                <br /> <br />
+                <button>Add Card </button> <i class="fas fa-times fa-2x"></i>
+            </div>
+            <div style="align-self: flex-start">Testing/Verifying 
+                <i class="fas fa-ellipsis-h alignRight"></i>
+                <br /> <br />
+                <input class="textbox" type="text" placeholder="Twitter app frontend" />
+                <br /> <br />
+                <a href="">+Add another card</a>
+            </div>
+            <div style="align-self: flex-start">Deploying 
+                <i class="fas fa-ellipsis-h alignRight"></i>
+                <br /> <br />
+                <input class="textbox" type="text" placeholder="Twitter app backend" />
+                <br /> <br />
+                <a href="">+Add another card</a>
+            </div>
+            <div style="align-self: flex-start">Done 
+                <i class="fas fa-ellipsis-h alignRight"></i> 
+                <br /> <br />
+                <a href="">+Add card</a>
+            </div>  
+            <div style="align-self: flex-start">+ Add another list</div>
+            <div style="align-self: flex-start">
+                <input class="textbox" type="text" placeholder="Enter list title..." />
+                <br /> <br />
+                <button>Add List</button> <i class="fas fa-times fa-2x"></i>
+            </div>
+        </div>
+
+        <script>
+            function focusFunction() {
+                document.getElementById("myInput").style.background = "white";
+            }
+
+            function blurFunction() {
+                document.getElementById("myInput").style.background = "#4790A8";
+            }
+        </script>
+
+    </body>
+</html>
